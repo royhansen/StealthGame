@@ -78,3 +78,6 @@ DerivedDataCache/*
 
 # Starter Content
 */StarterContent/
+
+# IPCH
+ipch/*
