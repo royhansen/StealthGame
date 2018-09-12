@@ -19,10 +19,10 @@ public:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere, Category = "Componenets")
+	UPROPERTY(VisibleAnywhere, Category = "Components")
 	UStaticMeshComponent* MeshComp;
 
-	UPROPERTY(VisibleAnywhere, Category = "Componenets")
+	UPROPERTY(VisibleAnywhere, Category = "Components")
 	USphereComponent* SphereComp;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Effects")
