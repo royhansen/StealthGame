@@ -7,7 +7,7 @@
 #include "FPSLaunchpad.generated.h"
 
 class UBoxComponent;
-class UDecalComponent;
+class UStaticMeshComponent;
 
 UCLASS()
 class FPSGAME_API AFPSLaunchpad : public AActor
@@ -23,11 +23,17 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
-	UDecalComponent* DecalComp;
-
-	UPROPERTY(VisibleAnywhere, Category = "Components")
 	UBoxComponent* OverlapComp;
 
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UStaticMeshComponent* MeshComp;
+
+	UPROPERTY(EditAnywhere, Category = "LaunchPad")
+	float LaunchStrength;
+
+	UPROPERTY(EditAnywhere, Category = "LaunchPad")
+	float LaunchPitchAngle;
+
 	UFUNCTION()
-		void HandleOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void HandleOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };
